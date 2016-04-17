@@ -5,14 +5,10 @@ import time
 from facebot import Facebook
 
 
-# setup facebook globals
-FACEBOOK_USERNAME = 'nchau1904@yahoo.com'
-FACEBOOK_PASSWORD = 'dontgiveafuck'
-
+# setup facebook constants
 FACEBOOK_USERID = '100000605485635'
 FACEBOOK_GENIE_USERID = '708914472545164'
 FACEBOOK_DTSG = 'AQGpKj4g31Ga:AQGs9zDgoS4V'
-
 FACEBOOK_COOKIES_DICT = {
     'datr': '65mHVEWhckhJYqK1NGmjanO5',
     'sb': '5xQTV2c31vv26X6eX_sIg9F4',
@@ -25,12 +21,8 @@ FACEBOOK_COOKIES_DICT = {
     'lu': 'TisfV88GYaSoS2ryiEehnECw'
 }
 
-FACEBOOK_APP_ID = '880947108718794'
-FACEBOOK_APP_SECRET = '477df39f350be6536503015e0aafbb5f'
-
-
+# setup facebook object
 facebook_object = Facebook(FACEBOOK_USERID, FACEBOOK_DTSG)
-
 
 # add in cookies we need
 for k in FACEBOOK_COOKIES_DICT:
@@ -61,7 +53,7 @@ while True:
             facebook_object.mark_message_read(FACEBOOK_GENIE_USERID, conversation_id)
 
             # reply to it
-            facebook_object.send_message(FACEBOOK_GENIE_USERID, conversation_id, FACEBOOK_GENIE_USERID, conversation_id, 'HEY THERE')
+            facebook_object.send_message(FACEBOOK_GENIE_USERID, conversation_id, FACEBOOK_GENIE_USERID, conversation_id, 'This is an automated reply')
 
     # sleep for 5 seconds
     time.sleep(5)
